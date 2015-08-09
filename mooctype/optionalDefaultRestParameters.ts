@@ -24,12 +24,13 @@
         address: HTMLInputElement = <HTMLInputElement>$('address'),
         address2: HTMLInputElement = <HTMLInputElement>$('address2'),
         city: HTMLInputElement = <HTMLInputElement>$('city'),
+        state: HTMLInputElement = <HTMLInputElement>$('state'),
         result = $('result');
 
     //Call function with optional parameter
-    addressButton.addEventListener('click',(e) => buildAddressOptional(address.value, city.value, state.value, address2.value));
+    //addressButton.addEventListener('click',(e) => buildAddressOptional(address.value, city.value, state.value, address2.value));
 
     //Call function with Rest parameters
-    //addressButton.addEventListener('click',(e) => buildAddressRest(city.value, address.value, address2.value, state.value));
+    addressButton.addEventListener('click',(e) => buildAddressRest(city.value, state.value, address.value, address2.value));
            
 } ());
