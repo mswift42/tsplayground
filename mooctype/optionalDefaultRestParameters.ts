@@ -1,17 +1,17 @@
 ﻿(function () {
 
     //Optional parameter
-    function buildAddressOptional(address1: string, city: string, address2?: string) {
+    function buildAddressOptional(address1: string, city: string, state: string, address2?: string) {
         var addr2: string = (address2.length > 0) ? ', ' +  address2 : '';
-        displayAddress(address1 + addr2 + ', ' + city);
+        displayAddress(address1 + addr2 + ', ' + city + ', ' + state);
     }
 
     //Rest parameters
-    function buildAddressRest(city: string, ...Address: string[]) {
+    function buildAddressRest(city: string, state: string, ...Address: string[]) {
         var address = '';
         Address.forEach((addr) => address += (addr.length > 0) ? addr + ', ': '');
         address += city; 
-        displayAddress(address);
+        displayAddress(address + ', ' + state);
     }
 
     function displayAddress(msg: string) {
@@ -27,9 +27,9 @@
         result = $('result');
 
     //Call function with optional parameter
-    //addressButton.addEventListener('click',(e) => buildAddressOptional(address.value, city.value, address2.value));
+    addressButton.addEventListener('click',(e) => buildAddressOptional(address.value, city.value, state.value, address2.value));
 
     //Call function with Rest parameters
-    addressButton.addEventListener('click',(e) => buildAddressRest(city.value, address.value, address2.value));
+    //addressButton.addEventListener('click',(e) => buildAddressRest(city.value, address.value, address2.value, state.value));
            
 } ());
