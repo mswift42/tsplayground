@@ -9,7 +9,7 @@
         return this._foodGroups;
     }
 
-    set foodGroups(value:Array) {
+    set foodGroups(value:FoodGroup[]) {
         this._foodGroups = value;
     }
 
