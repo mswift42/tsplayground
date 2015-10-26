@@ -1,5 +1,6 @@
 import {Component, bootstrap} from 'angular2/angular2';
 import {NewTask} from './newtask';
+import {TaskService} from './Taskservice';
 
 @Component({
     selector: 'my-app',
@@ -12,4 +13,4 @@ class AppComponent {
     public hero = 'Windstorm';
 }
 
-bootstrap(AppComponent)
+bootstrap(AppComponent, [TaskService])
