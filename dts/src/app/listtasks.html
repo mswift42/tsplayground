@@ -1,7 +1,9 @@
-<div class="tasklist">
-    <ul>
-        <li *ng-for="#task of tasklist">
-            {{task.summary}}
-        </li>
-    </ul>
+<div class="singletask">
+  <div class="card" *ng-for="#task of tasklist">
+    <div class="card-block">
+      <div class="card-title">
+        {{task.summary}}
+      </div>
+    </div>
+  </div>
 </div>
