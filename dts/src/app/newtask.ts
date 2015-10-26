@@ -1,4 +1,6 @@
 import {Component} from 'angular2/angular2';
+import {TaskService} from './Taskservice';
+import {Task} from './Task';
 
 @Component({
     selector: 'new-task',
@@ -6,10 +8,16 @@ import {Component} from 'angular2/angular2';
 })
 
 export class NewTask {
-    doneTyping(summary) {
-        if (summary != '') {
-            console.log(summary);
-
+    ts: TaskService;
+    constructor(TaskService: TaskService){
+        this.ts = TaskService;
+    }
+    saveTask(summary) {
+        if (summary.value) {
+            let task: Task = new Task(summary.value);
+            this.ts.addTask(task);
+                console.log(summary.value);
+            summary.value = '';
         }
     }
 
