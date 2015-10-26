@@ -10,6 +10,11 @@ export class TaskService {
         return this.tasks;
     }
     addTask(task) {
-      this.tasks.unshift(task);  
+      this.tasks.unshift(task);
     }
+    removeTask(task) {
+      let index = this.tasks.indexOf(task);
+      this.tasks.splice(index, 1);
+    }
+
 }
