@@ -16,7 +16,6 @@ export class NewTask {
         if (summary.value) {
             let task: Task = new Task(summary.value);
             this.ts.addTask(task);
-                console.log(summary.value);
             summary.value = '';
         }
     }
