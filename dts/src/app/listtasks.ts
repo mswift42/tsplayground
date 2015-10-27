@@ -9,10 +9,8 @@ import {Task} from './Task';
 })
 
 export class ListTasks {
-  ts: TaskService;
   tasklist: Array<Task>;
   constructor(TaskService: TaskService) {
-    this.ts = TaskService;
-    this.tasklist = this.ts.getTasks();
+    this.tasklist = TaskService.getTasks();
   }
 }
