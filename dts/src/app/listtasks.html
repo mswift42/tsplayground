@@ -1,9 +1,5 @@
 <div class="tasklist">
   <div class="card singletask" *ng-for="#task of tasklist">
-    <div class="card-block">
-      <div class="card-title">
-        {{task.summary}}
-      </div>
-    </div>
+    <list-task summary="{{task.summary}}"></list-task>
   </div>
 </div>
