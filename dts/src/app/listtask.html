@@ -1,0 +1,11 @@
+<div [hidden]="!editing" class="card-block">
+  <div class="card-title">
+    <label on-dblclick="toggleEdit()">{{summary}}</label>
+  </div>
+</div>
+<div [hidden]="editing" class="card-block">
+  <div class="card-title">
+    <input #tsummary value="{{summary}}" class="form-control"
+    (keyup.enter)="editTask(tsummary)">
+  </div>
+</div>
