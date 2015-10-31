@@ -11,12 +11,7 @@ import {ListTask} from './listtask';
 
 export class ListTasks {
     tasklist: Array<Task>;
-    editing: boolean;
     constructor(TaskService: TaskService) {
         this.tasklist = TaskService.getTasks();
-        this.editing = true;
-    }
-    toggleEdit() {
-        this.editing = !this.editing;
     }
 }
