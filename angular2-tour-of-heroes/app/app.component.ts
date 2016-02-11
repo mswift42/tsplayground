@@ -1,5 +1,4 @@
 import {Component} from 'angular2/core';
-import {NgModel} from 'angular2/direc'
 
 interface Hero {
   id: number;
@@ -22,14 +21,20 @@ var HEROES: Hero[] = [
     selector: 'my-app',
 template: `
 <h1>{{title}}</h1>
+<h2>My Heroes</h2>
+<ul class="heroes">
+<li *ngFor="#hero of heroes">
  <h2>{{hero.name}} details!</h2>
  <div><label>id: </label>{{hero.id}}</div>
  <div><input [(ngModel)]="hero.name" placeholder="name"></div>
+ </li>
+    </ul>
 `
 })
 
 export class AppComponent {
-  public title: string = 'Tour of Heroes';
+    public heroes = HEROES;
+  public title = 'Tour of Heroes';
   public hero: Hero = {
     id: 1,
     name: 'Windstorm'
