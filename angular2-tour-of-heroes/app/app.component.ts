@@ -23,7 +23,7 @@ template: `
 <h1>{{title}}</h1>
 <h2>My Heroes</h2>
 <ul class="heroes">
-<li *ngFor="#hero of heroes">
+<li *ngFor="#hero of heroes" (click)="onSelect(hero)">
  <span class="badge">{{hero.id}}</span> {{hero.name}}
  </li>
     </ul>
@@ -82,8 +82,9 @@ styles:[`
 export class AppComponent {
     public heroes = HEROES;
   public title = 'Tour of Heroes';
-  public hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  selectedHero: Hero;
+
+  onSelect(hero: Hero) {
+    this.selectedHero = hero;
+  }
  }
