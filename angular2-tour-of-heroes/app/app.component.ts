@@ -27,6 +27,14 @@ template: `
  <span class="badge">{{hero.id}}</span> {{hero.name}}
  </li>
     </ul>
+    <div *ngIf="selectedHero">
+    <h2>{{selectedHero.name}} details!</h2>
+    <div><label>id: </label>{{selectedHero.detail}}</div>
+    <div>
+      <label>name: </label>
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+        </div>
+        </div>
 `,
 styles:[`
   .selected {
