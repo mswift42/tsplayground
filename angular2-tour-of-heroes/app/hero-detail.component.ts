@@ -1,7 +1,8 @@
 import {Component} from 'angular2/core';
+import {Hero} from './hero';
 
 @Component({
-  selector: 'my-hero-dettail',
+  selector: 'my-hero-detail',
   template: `
     <div *ngIf="hero">
       <h2>{{hero.name}} details!</h2>
@@ -12,9 +13,10 @@ import {Component} from 'angular2/core';
       </div>
     </div>
   `,
+  inputs: ['hero']
 
 })
 
 export class HeroDetailComponent {
-
+  hero: Hero;
 }
