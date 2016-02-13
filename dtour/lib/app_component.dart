@@ -9,8 +9,13 @@ import 'package:angular2/angular2.dart';
     styleUrls: const ['app_component.css'])
 class AppComponent {
   var title = 'Tour of Heroes';
-  var hero = new Hero(1, 'Windstorm');
   var heroes = HEROES;
+  Hero selectedHero;
+
+  void onSelect(Hero hero) {
+    print(hero.name);
+    selectedHero = hero;
+  }
 }
 
 class Hero {
