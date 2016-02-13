@@ -3,6 +3,7 @@ import {HeroService} from './hero.service';
 import {HeroesComponent} from './heroes.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 import {DashboardComponent} from './dashboard.component';
+import {HeroDetailComponent} from './hero-detail.component';
 
 @Component({
   selector:'my-app',
@@ -26,7 +27,12 @@ import {DashboardComponent} from './dashboard.component';
     name: 'Dashboard',
     component: DashboardComponent,
     useAsDefault: true
-  }])
+  },
+{
+  path: 'detail/:id',
+  name: 'HeroDetail',
+  component: HeroDetailComponent
+}])
 export class AppComponent {
   title = 'Tour of Heroes';
 }
