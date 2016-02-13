@@ -66,8 +66,7 @@ styles:[`
     border-radius: 4px 0px 0px 4px;
   }
 `],
-directives: [HeroDetailComponent],
-providers: [HeroService]
+directives: [HeroDetailComponent]
 
 })
 

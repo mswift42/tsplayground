@@ -10,6 +10,6 @@ import {HeroesComponent} from './heroes.component';
     directives: [HeroesComponent],
     providers:[HeroService]
 })
-class AppComponent {
+export class AppComponent {
   title = 'Tour of Heroes';
 }
