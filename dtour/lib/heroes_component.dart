@@ -7,17 +7,17 @@ import 'package:dtour/Hero.dart' show Hero;
 import 'package:dtour/hero_service.dart';
 
 @Component(
-    selector: 'my-app',
-    templateUrl: 'app_component.html',
-    styleUrls: const ['app_component.css'],
+    selector: 'my-heroes',
+    templateUrl: 'heroes_component.html',
+    styleUrls: const ['heroes_component.css'],
     directives: const [HeroDetailComponent],
     providers: const [HeroService])
-class AppComponent implements OnInit {
+class HeroesComponent implements OnInit {
   var title = 'Tour of Heroes';
   List<Hero> heroes;
   Hero selectedHero;
   final HeroService _heroService;
-  AppComponent(this._heroService);
+  HeroesComponent(this._heroService);
 
   getHeroes() async {
     heroes = await _heroService.getHeroes();
