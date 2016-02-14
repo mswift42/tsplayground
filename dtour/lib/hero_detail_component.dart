@@ -19,6 +19,4 @@ class HeroDetailComponent implements OnInit {
   goBack() {
     window.history.back();
   }
-
-  gotoDetail(hero) {}
 }
