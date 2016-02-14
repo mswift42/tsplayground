@@ -5,6 +5,7 @@ import 'package:angular2/core.dart';
 import 'package:dtour/hero-detail_component.dart' show HeroDetailComponent;
 import 'package:dtour/Hero.dart' show Hero;
 import 'package:dtour/hero_service.dart';
+import 'package:angular2/router.dart';
 
 @Component(
     selector: 'my-heroes',
@@ -17,7 +18,8 @@ class HeroesComponent implements OnInit {
   List<Hero> heroes;
   Hero selectedHero;
   final HeroService _heroService;
-  HeroesComponent(this._heroService);
+  final Router _router;
+  HeroesComponent(this._heroService, this._router);
 
   getHeroes() async {
     heroes = await _heroService.getHeroes();
@@ -29,5 +31,12 @@ class HeroesComponent implements OnInit {
 
   ngOnInit() {
     getHeroes();
+  }
+
+  gotoDetail() {
+    _router.navigate([
+      'HeroDetail',
+      {'id': selectedHero.id.toString()}
+    ]);
   }
 }
