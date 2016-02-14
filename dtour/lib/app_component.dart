@@ -3,6 +3,7 @@ import 'package:angular2/router.dart';
 import 'package:dtour/hero_service.dart' show HeroService;
 import 'package:dtour/heroes_component.dart' show HeroesComponent;
 import 'package:dtour/dashboard_component.dart' show DashboardComponent;
+import 'package:dtour/hero_detail_component.dart' show HeroDetailComponent;
 
 @Component(
     selector: 'my-app',
@@ -22,7 +23,9 @@ import 'package:dtour/dashboard_component.dart' show DashboardComponent;
       path: '/dashboard',
       name: 'Dashboard',
       component: DashboardComponent,
-      useAsDefault: true)
+      useAsDefault: true),
+  const Route(
+      path: '/detail/:id', name: 'HeroDetail', component: HeroDetailComponent)
 ])
 class AppComponent {
   final String title = 'Tour of Heroes';
