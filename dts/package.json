@@ -9,7 +9,7 @@
     "lite": "lite-server",
     "typings": "typings",
     "postinstall": "typings install",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\""
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\""
   },
   "author": "",
   "license": "ISC",
