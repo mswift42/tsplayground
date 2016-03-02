@@ -9,4 +9,10 @@ export class TaskService {
   getTasks(): Task[] {
     return this.tasklist;
   }
+  addTask(task: Task) {
+    this.tasklist.unshift(task);
+  }
+  deleteTask(id: number) {
+    this.tasklist = this.tasklist.filter((i) => i.id !== id);
+  }
 }
