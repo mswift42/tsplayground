@@ -1,0 +1,11 @@
+<div class="tasklist">
+  <div class="input-field">
+    <input #summary placeholder="Enter new task" id="newtask" type="text"
+    (keyup.enter)="addTask(summary.value)" summary.value=""/>
+  </div>
+  <div class="tasks">
+    <div *ngFor="#task of tasklist">
+      <single-task summary="{{task.summary}}" id="{{task.id}}" contents="{{task.contents}}"></single-task>
+    </div>
+  </div>
+</div>
