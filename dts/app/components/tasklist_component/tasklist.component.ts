@@ -6,7 +6,15 @@ import {TaskComponent} from '../task_component/task.component';
 @Component({
   selector: 'task-list',
   templateUrl: 'app/components/tasklist_component/tasklist.component.html',
-  directives: [TaskComponent]
+  directives: [TaskComponent],
+  providers: [TaskService]
 })
 
-export class TaskListComponent {}
+export class TaskListComponent {
+  tasklist: Task[];
+  constructor(private taskservice: TaskService) {
+  }
+  ngOnInit() {
+    this.tasklist = this.taskservice.getTasks();
+  }
+}
