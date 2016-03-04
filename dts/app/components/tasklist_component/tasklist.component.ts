@@ -17,4 +17,10 @@ export class TaskListComponent {
   ngOnInit() {
     this.tasklist = this.taskservice.getTasks();
   }
+  addTask(summary: string) {
+    this.taskservice.addTask(summary);
+  }
+  deleteTask(taskid: string) {
+    this.taskservice.deleteTask(parseInt(taskid));
+  }
 }
