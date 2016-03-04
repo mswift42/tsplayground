@@ -11,5 +11,4 @@ export class TaskComponent {
   taskid: string;
   scheduled: Date;
   taskcontents: string[];
-
 }
