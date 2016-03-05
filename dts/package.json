@@ -9,7 +9,8 @@
     "lite": "lite-server",
     "typings": "typings",
     "postinstall": "typings install",
-    "start": "concurrently \"npm run tsc:w\" \"npm run lite\""
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "test": "live-server --open=tests/unit-tests.html"
   },
   "author": "",
   "license": "ISC",
