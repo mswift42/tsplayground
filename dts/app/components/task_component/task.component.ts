@@ -4,7 +4,8 @@ import {TaskService} from '../../services/TaskService';
 @Component({
   selector: 'single-task',
   templateUrl: 'app/components/task_component/task.component.html',
-  inputs: ['summary', 'taskid', 'scheduled', 'taskcontents']
+  inputs: ['summary', 'taskid', 'scheduled', 'taskcontents'],
+  providers: [TaskService]
 })
 
 export class TaskComponent {

@@ -6,7 +6,7 @@
           <span *ngIf="!editingsummary" (dblclick)="toggleSummaryEdit()"
                 class="card-title">{{summary}}</span>
           <span *ngIf="editingsummary">
-            <input type="text" value="{{summary}}"
+            <input type="text" [(ngModel)]="summary"
                    (keyup.enter)="editSummary($event)"
                    (blur)="toggleSummaryEdit()" />
           </span>
