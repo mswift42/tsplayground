@@ -3,7 +3,8 @@
     <div class="col s12 m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title">{{summary}}</span>
+          <span *ngIf="!editsummary" (dblclick)="togglesummaryedit()"
+                class="card-title">{{summary}}</span>
           <p *ngFor="#content of taskcontents">{{content}}</p>
         </div>
       </div>
