@@ -8,7 +8,12 @@ import {Component} from 'angular2/core';
 
 export class TaskComponent {
   summary: string;
+  editsummary: boolean = false;
   taskid: string;
   scheduled: Date;
   taskcontents: string[];
+
+  toggleSummaryEdit() {
+    this.editsummary = !this.editsummary;
+  }
 }
