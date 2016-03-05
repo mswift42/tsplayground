@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {TaskService} from '../../services/TaskService';
 
 @Component({
   selector: 'single-task',
@@ -8,12 +9,19 @@ import {Component} from 'angular2/core';
 
 export class TaskComponent {
   summary: string;
-  editsummary: boolean = false;
+  editingsummary: boolean = false;
   taskid: string;
   scheduled: Date;
   taskcontents: string[];
 
+  constructor(private _taskService: TaskService) {}
+
   toggleSummaryEdit() {
-    this.editsummary = !this.editsummary;
+    this.editingsummary = !this.editingsummary;
   }
+  editSummary(event) {
+  this._taskService.editSummary(event.target.value, this.taskid);
+  this.toggleSummaryEdit();
+  }
+
 }
